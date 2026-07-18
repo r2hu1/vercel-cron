@@ -30,11 +30,13 @@ Reads `.env`, validates URLs and cron expressions, generates `vercel.json` with 
 
 ## Deploy
 
-1. Push to GitHub and import into Vercel
-2. Set these env vars in Vercel project settings:
+1. Run `npm run build` locally first — generates `vercel.json` from `.env`
+2. Push to GitHub and import into Vercel
+3. Set these env vars in Vercel project settings:
    - `CRON_URLS` — same as in `.env` (runtime)
+   - `SCHEDULE` — same as in `.env` (runtime)
    - `CRON_SECRET` — optional, random string for auth verification
-3. Deploy. Cron jobs run on the configured schedule.
+4. Deploy. Cron jobs run on the configured schedule.
 
 ## Local dev
 
