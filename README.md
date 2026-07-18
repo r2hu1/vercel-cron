@@ -58,6 +58,18 @@ curl http://localhost:3000/api/cron/0
 | Cron trigger | Vercel GETs `/api/cron/{i}` on schedule |
 | Route handler | Fetches target URL with timeout (25s), retries (2x), auth check |
 
+## Project structure
+
+```
+lib/
+  env.js              parse .env into key-value pairs
+  validate.js         URL + cron expression validation
+  generate.js         load config, build crons array, write vercel.json
+scripts/
+  generate-vercel-json.js  3-line orchestrator
+app/api/cron/[id]/route.js  Next.js route handler (proxies to target URL)
+```
+
 ## Route handler features
 
 - Request ID per invocation for log tracing
