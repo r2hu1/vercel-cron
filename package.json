@@ -1,0 +1,16 @@
+{
+  "name": "vercel-cron",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/generate-vercel-json.js && next build",
+    "build:vercel": "node scripts/generate-vercel-json.js",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  }
+}
